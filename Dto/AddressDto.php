@@ -6,26 +6,26 @@ namespace nkmtn\RussianPostBundle\Dto;
 
 final class AddressDto
 {
-    private ?string $country;
-    private ?string $districtType;  // край/респ/обл
-    private ?string $districtName;  //Красноярский/Карелия/Ленинградская
-    private ?string $ariaType;  // р-н
-    private ?string $ariaName;  // Древлянка
-    private ?string $localityType;  // г/с
-    private ?string $localityName;  // Петрозаводск
-    private ?string $streetType;    // ул/пр
-    private ?string $streetName;    // Лисициной
-    private ?string $houseType;   // д
-    private ?string $houseType;   // Номер дома
-    private ?string $letter;    // Литера
-    private ?string $delimiter; //Дробь
-    private ?string $external;  // Корпус
-
-    private ?string $building;  // Строение
-    private ?string $flat;  // Помещение/Квартира
-    private ?string $box;   // Абонентский ущик
-    private ?string $ops;   // Отделение почтовой связи
-    private ?string $army;  // Войскоая часть
+    private ?string $country = NULL;
+    private ?string $districtType = NULL;  // (край/респ/обл)
+    private ?string $districtName = NULL;  // (Красноярский/Карелия/Ленинградская)
+    private ?string $areaType = NULL;  // (р-н)
+    private ?string $areaName = NULL;  // (Древлянка)
+    private ?string $localityType = NULL;  // (г/с)
+    private ?string $localityName = NULL;  // Петрозаводск
+    private ?string $streetType = NULL;    // (ул/пр)
+    private ?string $streetName = NULL;    // (Лисициной)
+    private ?string $houseType = NULL;   // (д)
+    private ?string $houseName = NULL;   // Номер дома
+    private ?string $letter = NULL;    // Литера
+    private ?string $delimiter = NULL; // Дробь
+    private ?string $external = NULL;  // Корпус
+    private ?string $building = NULL;  // Строение
+    private ?string $flat = NULL;  // Помещение/Квартира
+    private ?string $boxType = NULL;   // (а/я)
+    private ?string $boxName = NULL;   // (45)
+    private ?string $militaryType = NULL;  // (в/ч)
+    private ?string $militaryName = NULL;  // (1234)
 
     /*** COUNTRY ***/
 
@@ -82,6 +82,44 @@ final class AddressDto
     public function setDistrictName(string $districtName): AddressDto
     {
         $this->districtName = $districtName;
+        return $this;
+    }
+
+   /*** AREA ***/
+
+    /**
+     * @return string
+     */
+    public function getAreaType(): string
+    {
+        return $this->areaType;
+    }
+
+    /**
+     * @param string $areaType
+     * @return AddressDto
+     */
+    public function setAreaType(string $areaType): AddressDto
+    {
+        $this->areaType = $areaType;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAreaName(): string
+    {
+        return $this->areaName;
+    }
+
+    /**
+     * @param string $areaName
+     * @return AddressDto
+     */
+    public function setAreaName(string $areaName): AddressDto
+    {
+        $this->areaName = $areaName;
         return $this;
     }
 
@@ -256,6 +294,64 @@ final class AddressDto
     public function setExternal(string $external): AddressDto
     {
         $this->external = $external;
+        return $this;
+    }
+
+    /*** BUILDING ***/
+
+    /**
+     * @return string
+     */
+    public function getBuilding(): string
+    {
+        return $this->building;
+    }
+
+    /**
+     * @param string $building
+     * @return AddressDto
+     */
+    public function setBuilding(string $building): AddressDto
+    {
+        $this->building = $building;
+        return $this;
+    }
+
+    /*** BOX ***/
+
+    /**
+     * @return string
+     */
+    public function getBoxType(): string
+    {
+        return $this->boxType;
+    }
+
+    /**
+     * @param string $boxType
+     * @return AddressDto
+     */
+    public function setBoxType(string $boxType): AddressDto
+    {
+        $this->boxType = $boxType;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBoxName(): string
+    {
+        return $this->boxName;
+    }
+
+    /**
+     * @param string $boxName
+     * @return AddressDto
+     */
+    public function setBoxName(string $boxName): AddressDto
+    {
+        $this->boxName = $boxName;
         return $this;
     }
 }

@@ -76,6 +76,11 @@ class RussianPostClient
                 $result->setDistrictName($piece['val']);
             }
 
+            if(!strcasecmp($piece['content'], 'A')) {
+                $result->setAreaType($piece['stname']);
+                $result->setAreaName($piece['val']);
+            }
+
             if(!strcasecmp($piece['content'], 'P')) {
                 $result->setLocalityType($piece['stname']);
                 $result->setLocalityName($piece['val']);
@@ -101,6 +106,24 @@ class RussianPostClient
 
             if(!strcasecmp($piece['content'], 'E')) {
                 $result->setExternal($piece['val']);
+            }
+
+            if(!strcasecmp($piece['content'], 'B')) {
+                $result->setBuilding($piece['val']);
+            }
+
+            if(!strcasecmp($piece['content'], 'F')) {
+                $result->setFlat($piece['val']);
+            }
+
+            if(!strcasecmp($piece['content'], 'BOX')) {
+                $result->setBoxType($piece['stname']);
+                $result->setBoxNumber($piece['val']);
+            }
+
+            if(!strcasecmp($piece['content'], 'M')) {
+                $result->setMilitaryType($piece['stname']);
+                $result->setMilitaryNumber($piece['val']);
             }
 
         }
