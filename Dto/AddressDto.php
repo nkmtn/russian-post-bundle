@@ -32,7 +32,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getCountry(): string
+    public function getCountry(): ?string
     {
         return $this->country;
     }
@@ -52,7 +52,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getDistrictType(): string
+    public function getDistrictType(): ?string
     {
         return $this->districtType;
     }
@@ -70,7 +70,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getDistrictName(): string
+    public function getDistrictName(): ?string
     {
         return $this->districtName;
     }
@@ -90,7 +90,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getAreaType(): string
+    public function getAreaType(): ?string
     {
         return $this->areaType;
     }
@@ -108,7 +108,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getAreaName(): string
+    public function getAreaName(): ?string
     {
         return $this->areaName;
     }
@@ -128,7 +128,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getLocalityType(): string
+    public function getLocalityType(): ?string
     {
         return $this->localityType;
     }
@@ -146,7 +146,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getLocalityName(): string
+    public function getLocalityName(): ?string
     {
         return $this->localityName;
     }
@@ -166,7 +166,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getStreetType(): string
+    public function getStreetType(): ?string
     {
         return $this->streetType;
     }
@@ -184,7 +184,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getStreetName(): string
+    public function getStreetName(): ?string
     {
         return $this->streetName;
     }
@@ -204,7 +204,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getHouseType(): string
+    public function getHouseType(): ?string
     {
         return $this->houseType;
     }
@@ -222,7 +222,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getHouseName(): string
+    public function getHouseName(): ?string
     {
         return $this->houseName;
     }
@@ -242,7 +242,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getLetter(): string
+    public function getLetter(): ?string
     {
         return $this->letter;
     }
@@ -262,7 +262,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getDelimited(): string
+    public function getDelimited(): ?string
     {
         return $this->delimited;
     }
@@ -282,7 +282,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getExternal(): string
+    public function getExternal(): ?string
     {
         return $this->external;
     }
@@ -302,7 +302,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getBuilding(): string
+    public function getBuilding(): ?string
     {
         return $this->building;
     }
@@ -322,7 +322,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getFlat(): string
+    public function getFlat(): ?string
     {
         return $this->flat;
     }
@@ -342,7 +342,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getBoxType(): string
+    public function getBoxType(): ?string
     {
         return $this->boxType;
     }
@@ -360,7 +360,7 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getBoxName(): string
+    public function getBoxName(): ?string
     {
         return $this->boxName;
     }
