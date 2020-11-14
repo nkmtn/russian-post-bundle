@@ -64,10 +64,31 @@ class RussianPostClient
 
         $content = $response->toArray();
 
-        $result = new AddressDto();
-        var_dump($content);
-        $result->setCountry($content['addr']['element'][0]['val']);
+//    private ?string $country;
+//    private ?string $districtType;  // край/респ/обл
+//    private ?string $districtName;  //Красноярский/Карелия/Ленинградская
+//    private ?string $localityType;  // г
+//    private ?string $localityName;  // Петрозаводск
+//    private ?string $streetType;    // ул/пр
+//    private ?string $streetName;    // Лисициной
 
+        $result = new AddressDto();
+        foreach($content['addr']['element'] as $piece){
+
+            if(strcasecmp($piece['content'], 'C')){
+                $result->setCountry($content['addr']['element'][0]['val']);
+            }
+
+            if(strcasecmp($piece['content'], 'R')){
+                $result->setDistrictType($content['addr']['element'][0]['stname']);
+                $result->setDistrictName($content['addr']['element'][0]['val']);
+            }
+
+            if(strcasecmp($piece['content'], 'P')) {
+                $result->setStreetType($content['addr']['element'][0]['stname']);
+                $result->setStreetName($content['addr']['element'][0]['val']);
+            }
+        }
         return $result;
     }
 }
