@@ -63,6 +63,7 @@ class RussianPostClient
 //        }
 
         $content = $response->toArray();
+        var_dump($content);
 
         $result = new AddressDto();
 

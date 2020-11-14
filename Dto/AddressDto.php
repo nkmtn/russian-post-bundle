@@ -99,9 +99,9 @@ final class AddressDto
     }
 
     /*** Delivery ***/
-    public function getDelivery(): ?int
+    public function getDelivery(): ?string
     {
-        return $this->deliveryCode;
+        return strval($this)->delivery;
     }
 
     /**
