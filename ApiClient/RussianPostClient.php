@@ -46,6 +46,11 @@ class RussianPostClient
                 'Content-Type' => 'application/json',
                 'AuthCode' => $this->accessToken,
             ],
+            'json' => [
+                "addr" => [ ["val" => "респ. Северная Осетия - Алания, г. Владикавказ,   ул. Штыба, д. 2"] ],
+                "version" => "v7_2",
+                "reqId" => "12204cb4-37fb-4059-91e6-c6e17e946d7f"
+            ]
         ]);
 
 //        if ($response->getStatusCode() !== Response::HTTP_OK) {
