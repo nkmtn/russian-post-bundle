@@ -93,7 +93,7 @@ class RussianPostClient
 
             if(!strcasecmp($piece['content'], 'N')) {
                 $result->setHouseType($piece['stname']);
-                $result->setHouseNumber($piece['val']);
+                $result->setHouseName($piece['val']);
             }
 
             if(!strcasecmp($piece['content'], 'L')) {
