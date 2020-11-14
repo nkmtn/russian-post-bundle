@@ -108,7 +108,7 @@ final class AddressDto
      * @param string $delivery
      * @return AddressDto
      */
-    public function setDelivery(int $deliveryCode): AddressDto
+    public function setDelivery(string $delivery): AddressDto
     {
         $this->delivery = $delivery;
         return $this;
