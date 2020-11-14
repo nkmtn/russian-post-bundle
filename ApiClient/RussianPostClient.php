@@ -85,6 +85,24 @@ class RussianPostClient
                 $result->setStreetType($piece['stname']);
                 $result->setStreetName($piece['val']);
             }
+
+            if(!strcasecmp($piece['content'], 'N')) {
+                $result->setHouseType($piece['stname']);
+                $result->setHouseNumber($piece['val']);
+            }
+
+            if(!strcasecmp($piece['content'], 'L')) {
+                $result->setLetter($piece['val']);
+            }
+
+            if(!strcasecmp($piece['content'], 'D')) {
+                $result->setDelimited($piece['val']);
+            }
+
+            if(!strcasecmp($piece['content'], 'E')) {
+                $result->setExternal($piece['val']);
+            }
+
         }
         return $result;
     }
