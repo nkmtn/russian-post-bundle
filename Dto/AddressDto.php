@@ -6,7 +6,11 @@ namespace nkmtn\RussianPostBundle\Dto;
 
 final class AddressDto
 {
-    private ?string $country = NULL;
+    private ?string $state = NULL;    // обработка кода возврата валидности
+    private ?string $inaddr = NULL;
+    private ?string $outaddr = NULL;
+
+    private ?string $country = NULL;    // (Российская Федерация)
     private ?string $districtType = NULL;  // (край/респ/обл)
     private ?string $districtName = NULL;  // (Красноярский/Карелия/Ленинградская)
     private ?string $areaType = NULL;  // (р-н)
@@ -26,6 +30,54 @@ final class AddressDto
     private ?string $boxName = NULL;   // (45)
     private ?string $militaryType = NULL;  // (в/ч)
     private ?string $militaryName = NULL;  // (1234)
+
+    /*** STATE ***/
+    public function getState(): ?string
+    {
+        return $this->state;
+    }
+
+    /**
+     * @param string $state
+     * @return AddressDto
+     */
+    public function setState(string $state): AddressDto
+    {
+        $this->state = $state;
+        return $this;
+    }
+
+    /*** INADDR ***/
+    public function getInaddr(): ?string
+    {
+        return $this->inaddr;
+    }
+
+    /**
+     * @param string $inaddr
+     * @return AddressDto
+     */
+    public function setInaddr(string $inaddr): AddressDto
+    {
+        $this->inaddr = $inaddr;
+        return $this;
+    }
+
+    /*** OUTADDR ***/
+    public function getOutaddr(): ?string
+    {
+        return $this->Outaddr;
+    }
+
+    /**
+     * @param string $outaddr
+     * @return AddressDto
+     */
+    public function setOutaddr(string $Outaddr): AddressDto
+    {
+        $this->outaddr = $outaddr;
+        return $this;
+    }
 
     /*** COUNTRY ***/
 

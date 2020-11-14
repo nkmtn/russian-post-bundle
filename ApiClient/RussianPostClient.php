@@ -65,6 +65,24 @@ class RussianPostClient
         $content = $response->toArray();
 
         $result = new AddressDto();
+
+        $result->setState($content['addr']['inaddr']);
+        $result->setState($content['addr']['outaddr']);
+
+        if(!strcasecmp($content['state'], '302')){
+
+        }
+
+        if(!strcasecmp($content['state'], '301')){
+            $result->setState('good');
+        } elseif(!strcasecmp($content['state'], '302')){
+            $result->setState('trouble');
+        } else {
+            $result->setState('bad');
+        }
+
+
+
         foreach($content['addr']['element'] as $piece){
 
             if(!strcasecmp($piece['content'], 'C')){
