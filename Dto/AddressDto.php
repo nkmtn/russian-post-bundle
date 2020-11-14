@@ -7,9 +7,10 @@ namespace nkmtn\RussianPostBundle\Dto;
 final class AddressDto
 {
     private ?string $state = NULL;    // обработка кода возврата валидности
-    private ?string $inaddr = NULL;
-    private ?string $outaddr = NULL;
-    private ?string $mistake = NULL;
+    private ?string $inaddr = NULL; // Исходный адрес
+    private ?string $outaddr = NULL;    // Полученный адрес
+    private ?string $mistake = NULL;    // тип ошибки
+    private ?string $delivery = NULL;   // Пригодность для доставки
 
     private ?string $country = NULL;    // (Российская Федерация)
     private ?string $districtType = NULL;  // (край/респ/обл)
@@ -93,6 +94,22 @@ final class AddressDto
     public function setMistake(string $mistake): AddressDto
     {
         $this->mistake = $mistake;
+        return $this;
+    }
+
+    /*** Delivery ***/
+    public function getDelivery(): ?string
+    {
+        return $this->delivery;
+    }
+
+    /**
+     * @param string $delivery
+     * @return AddressDto
+     */
+    public function setDelivery(string $delivery): AddressDto
+    {
+        $this->delivery = $delivery;
         return $this;
     }
 

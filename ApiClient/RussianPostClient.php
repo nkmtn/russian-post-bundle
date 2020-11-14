@@ -73,15 +73,13 @@ class RussianPostClient
             $result->setMistake($content['addr']['missing']);
         }
 
-        if(!strcasecmp($content['state'], '301')){
-            $result->setState('good');
-        } elseif(!strcasecmp($content['state'], '302')){
-            $result->setState('trouble');
+        if(!strcasecmp($content['delivery'], '0')){
+            $result->setDelivery('Пригодно для доставки');
+        } elseif(!strcasecmp($content['delivery'], '1')){
+            $result->setDelivery('Требуют уточнения');
         } else {
-            $result->setState('bad');
+            $result->setDelivery('Плохие');
         }
-
-
 
         foreach($content['addr']['element'] as $piece){
 
