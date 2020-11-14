@@ -74,9 +74,9 @@ class RussianPostClient
             $result->setMistake($content['addr']['missing']);
         }
 
-        if(!strcasecmp(strval($content['delivery']), '0')){
+        if(!strcasecmp(strval($content['addr']['delivery']), '0')){
             $str = 'Пригодно для доставки';
-        } elseif (!strcasecmp(strval($content['delivery']), '1')) {
+        } elseif (!strcasecmp(strval($content['addr']['delivery']), '1')) {
             $str = 'Требует уточнения';
         } else {
             $str = 'Плохой адрес';
