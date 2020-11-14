@@ -9,6 +9,7 @@ final class AddressDto
     private ?string $state = NULL;    // обработка кода возврата валидности
     private ?string $inaddr = NULL;
     private ?string $outaddr = NULL;
+    private ?string $mistake = NULL;
 
     private ?string $country = NULL;    // (Российская Федерация)
     private ?string $districtType = NULL;  // (край/респ/обл)
@@ -76,6 +77,22 @@ final class AddressDto
     public function setOutaddr(string $outaddr): AddressDto
     {
         $this->outaddr = $outaddr;
+        return $this;
+    }
+
+     /*** MISTAKE ***/
+    public function getMistake(): ?string
+    {
+        return $this->mistake;
+    }
+
+    /**
+     * @param string $mistake
+     * @return AddressDto
+     */
+    public function setMistake(string $mistake): AddressDto
+    {
+        $this->mistake = $mistake;
         return $this;
     }
 

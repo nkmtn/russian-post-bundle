@@ -70,7 +70,7 @@ class RussianPostClient
         $result->setOutaddr($content['addr']['outaddr']);
 
         if(!strcasecmp($content['state'], '302')){
-
+            $result->setMistake($content['addr']['missing']);
         }
 
         if(!strcasecmp($content['state'], '301')){
