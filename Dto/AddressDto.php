@@ -101,7 +101,7 @@ final class AddressDto
     /*** Delivery ***/
     public function getDelivery(): ?string
     {
-        return strval($this)->delivery;
+        return $this->delivery;
     }
 
     /**
