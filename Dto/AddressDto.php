@@ -66,7 +66,7 @@ final class AddressDto
     /*** OUTADDR ***/
     public function getOutaddr(): ?string
     {
-        return $this->Outaddr;
+        return $this->outaddr;
     }
 
     /**
