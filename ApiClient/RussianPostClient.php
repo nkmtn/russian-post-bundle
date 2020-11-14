@@ -66,7 +66,7 @@ class RussianPostClient
 
         $result = new AddressDto();
         var_dump($content);
-        $result->setCountry($content['element'][0]['val']);
+        $result->setCountry($content['addr']['element'][0]['val']);
 
         return $result;
     }
