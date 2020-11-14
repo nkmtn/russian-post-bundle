@@ -11,6 +11,7 @@ final class AddressDto
     private ?string $outaddr = NULL;    // Полученный адрес
     private ?string $mistake = NULL;    // тип ошибки
     private ?string $delivery = NULL;   // Пригодность для доставки
+    private ?int $deliveryCode = NULL;
 
     private ?string $country = NULL;    // (Российская Федерация)
     private ?string $districtType = NULL;  // (край/респ/обл)
@@ -100,14 +101,14 @@ final class AddressDto
     /*** Delivery ***/
     public function getDelivery(): ?int
     {
-        return $this->strval(delivery);
+        return $this->deliveryCode;
     }
 
     /**
      * @param string $delivery
      * @return AddressDto
      */
-    public function setDelivery(string $delivery): AddressDto
+    public function setDelivery(int $deliveryCode): AddressDto
     {
         $this->delivery = $delivery;
         return $this;
