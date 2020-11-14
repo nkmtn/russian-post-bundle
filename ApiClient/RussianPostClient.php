@@ -32,7 +32,7 @@ class RussianPostClient
     public function __construct(string $token)
     {
         $this->client = HttpClient::create([
-            'base_uri' => 'https://address.pochta.ru/validate/api/v7_1'
+//            'base_uri' => 'https://address.pochta.ru/validate/api/v7_1'
         ]);
 
         $this->accessToken = $token;
@@ -41,7 +41,7 @@ class RussianPostClient
     public function validate(string $address)
     {
 
-        $response = $this->client->request('POST', '/', [
+        $response = $this->client->request('POST', 'https://address.pochta.ru/validate/api/v7_1/', [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'AuthCode' => $this->accessToken,
@@ -65,7 +65,7 @@ class RussianPostClient
         $content = $response->toArray();
 
         $result = new AddressDto();
-        $result->setName($content['element'][0]['val']);
+        $result->setCountry($content['element'][0]['val']);
 
         return $result;
     }
