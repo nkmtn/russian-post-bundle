@@ -75,16 +75,16 @@ class RussianPostClient
         $result = new AddressDto();
         foreach($content['addr']['element'] as $piece){
 
-            if(strcasecmp($piece['content'], 'C')){
+            if(!strcasecmp($piece['content'], 'C')){
                 $result->setCountry($content['addr']['element'][0]['val']);
             }
 
-            if(strcasecmp($piece['content'], 'R')){
+            if(!strcasecmp($piece['content'], 'R')){
                 $result->setDistrictType($content['addr']['element'][0]['stname']);
                 $result->setDistrictName($content['addr']['element'][0]['val']);
             }
 
-            if(strcasecmp($piece['content'], 'P')) {
+            if(!strcasecmp($piece['content'], 'P')) {
                 $result->setStreetType($content['addr']['element'][0]['stname']);
                 $result->setStreetName($content['addr']['element'][0]['val']);
             }
