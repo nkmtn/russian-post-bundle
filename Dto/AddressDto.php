@@ -317,6 +317,26 @@ final class AddressDto
         return $this;
     }
 
+    /*** FLAT ***/
+
+    /**
+     * @return string
+     */
+    public function getFlat(): string
+    {
+        return $this->flat;
+    }
+
+    /**
+     * @param string $flat
+     * @return AddressDto
+     */
+    public function setFlat(string $flat): AddressDto
+    {
+        $this->flat = $flat;
+        return $this;
+    }
+
     /*** BOX ***/
 
     /**
