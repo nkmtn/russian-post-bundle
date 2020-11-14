@@ -73,7 +73,7 @@ final class AddressDto
      * @param string $outaddr
      * @return AddressDto
      */
-    public function setOutaddr(string $Outaddr): AddressDto
+    public function setOutaddr(string $outaddr): AddressDto
     {
         $this->outaddr = $outaddr;
         return $this;

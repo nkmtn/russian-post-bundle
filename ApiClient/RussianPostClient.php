@@ -66,8 +66,8 @@ class RussianPostClient
 
         $result = new AddressDto();
 
-        $result->setState($content['addr']['inaddr']);
-        $result->setState($content['addr']['outaddr']);
+        $result->setInaddr($content['addr']['inaddr']);
+        $result->setOutaddr($content['addr']['outaddr']);
 
         if(!strcasecmp($content['state'], '302')){
 
