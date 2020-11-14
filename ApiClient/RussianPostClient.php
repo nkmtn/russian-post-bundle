@@ -76,17 +76,17 @@ class RussianPostClient
         foreach($content['addr']['element'] as $piece){
 
             if(!strcasecmp($piece['content'], 'C')){
-                $result->setCountry($content['addr']['element'][0]['val']);
+                $result->setCountry($piece['val']);
             }
 
             if(!strcasecmp($piece['content'], 'R')){
-                $result->setDistrictType($content['addr']['element'][0]['stname']);
-                $result->setDistrictName($content['addr']['element'][0]['val']);
+                $result->setDistrictType($piece['stname']);
+                $result->setDistrictName($piece['val']);
             }
 
             if(!strcasecmp($piece['content'], 'P')) {
-                $result->setStreetType($content['addr']['element'][0]['stname']);
-                $result->setStreetName($content['addr']['element'][0]['val']);
+                $result->setStreetType($piece['stname']);
+                $result->setStreetName($piece['val']);
             }
         }
         return $result;
