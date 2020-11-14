@@ -74,12 +74,13 @@ class RussianPostClient
         }
 
         if(!strcasecmp($content['delivery'], '0')){
-            $result->setDelivery('Пригодно для доставки');
-        } elseif(!strcasecmp($content['delivery'], '1')){
-            $result->setDelivery('Требуют уточнения');
+            $str = 'Пригодно для доставки';
+        } elseif (!strcasecmp($content['delivery'], '1')) {
+            $str = 'Требует уточнения';
         } else {
-            $result->setDelivery('Плохие');
+            $str = 'Плохой адрес';
         }
+        $result->setDelivery($str);
 
         foreach($content['addr']['element'] as $piece){
 
