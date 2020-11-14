@@ -105,14 +105,6 @@ final class AddressDto
     /**
      * @return string
      */
-    public function getDistrictName(): string
-    {
-        return $this->districtName;
-    }
-
-    /**
-     * @return string
-     */
     public function getLocalityName(): string
     {
         return $this->localityName;
