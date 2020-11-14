@@ -20,7 +20,7 @@ final class AddressDto
      * @param string $country
      * @return AddressDto
      */
-    public function setId(string $country): AddressDto
+    public function setCountry(string $country): AddressDto
     {
         $this->country = $country;
         return $this;
